@@ -8,7 +8,7 @@ Chatbot nội bộ sử dụng **LightRAG** để xây dựng knowledge graph t�
 |-------|-----------|
 | **Backend** | FastAPI + LightRAG (HKU) |
 | **Frontend** | Next.js 16 + TailwindCSS |
-| **LLM** | VNPay AI Gateway (`v_chat4`) |
+| **LLM** | Your choice |
 | **Embeddings** | `BAAI/bge-small-en-v1.5` (local, CPU) |
 | **Storage** | JSON files (Knowledge Graph) |
 
