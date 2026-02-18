@@ -1,0 +1,140 @@
+{
+  "export_date": "2025-01-07T17:30:00+07:00",
+  "project": "ALPHA",
+  "issues": [
+    {
+      "key": "ALPHA-142",
+      "summary": "API tính toán điểm tín dụng (Credit Score)",
+      "type": "Story",
+      "status": "Done",
+      "priority": "High",
+      "assignee": "anh.tran",
+      "reporter": "thu.le",
+      "sprint": "Sprint 6",
+      "story_points": 8,
+      "created": "2025-01-06T09:00:00+07:00",
+      "updated": "2025-01-07T11:45:00+07:00",
+      "resolved": "2025-01-07T11:45:00+07:00",
+      "description": "Tích hợp CIC API để lấy credit history, tính điểm theo thuật toán scoring nội bộ, trả về score + risk tier (A/B/C/D). Bao gồm mock fallback khi CIC không khả dụng.",
+      "labels": ["backend", "integration", "fintech"],
+      "comments": [
+        {"author": "anh.tran", "time": "2025-01-07T11:45:00+07:00", "content": "Done! CIC integration xong, có mock fallback. Response time: mock 300ms, real 800-2000ms. PR-89 ready for review."},
+        {"author": "huong.pham", "time": "2025-01-07T14:00:00+07:00", "content": "Reviewed & approved PR-89. Timeout set 10s + retry 2 lần là hợp lý."}
+      ]
+    },
+    {
+      "key": "ALPHA-145",
+      "summary": "UI màn hình quản lý khoản vay (Loan Management)",
+      "type": "Story",
+      "status": "In Progress",
+      "priority": "High",
+      "assignee": "mai.do",
+      "reporter": "thu.le",
+      "sprint": "Sprint 6",
+      "story_points": 13,
+      "created": "2025-01-06T09:00:00+07:00",
+      "updated": "2025-01-07T15:10:00+07:00",
+      "description": "Màn hình list khoản vay với filter/search, form tạo khoản vay mới, màn hình chi tiết. Kết nối với Loan API.",
+      "progress_note": "50% - Đang làm form Create Loan. Chờ API spec cập nhật field Loan Purpose.",
+      "labels": ["frontend", "ui"],
+      "sub_tasks": [
+        {"key": "ALPHA-145-1", "summary": "Loan list table + filter", "status": "Done"},
+        {"key": "ALPHA-145-2", "summary": "Form tạo khoản vay", "status": "In Progress"},
+        {"key": "ALPHA-145-3", "summary": "Màn hình chi tiết khoản vay", "status": "Todo"}
+      ]
+    },
+    {
+      "key": "ALPHA-147",
+      "summary": "Fix bug: race condition khi approve loan đồng thời",
+      "type": "Bug",
+      "status": "Done",
+      "priority": "Critical",
+      "assignee": "quan.nguyen",
+      "reporter": "hung.nguyen",
+      "sprint": "Sprint 6",
+      "story_points": 5,
+      "created": "2025-01-05T16:00:00+07:00",
+      "updated": "2025-01-07T14:30:00+07:00",
+      "resolved": "2025-01-07T14:30:00+07:00",
+      "description": "Bug: khi 2 user approve cùng 1 loan request đồng thời, hệ thống tạo 2 bản ghi disbursement. Ảnh hưởng tính toàn vẹn dữ liệu tài chính.",
+      "root_cause": "Thiếu distributed lock trong loan approval flow. Multiple instance có thể vào critical section cùng lúc.",
+      "solution": "Implement Redis Redlock với TTL 30s cho approval flow. Added integration test với 10 concurrent requests.",
+      "labels": ["backend", "critical", "bug", "concurrency"],
+      "comments": [
+        {"author": "quan.nguyen", "time": "2025-01-07T14:30:00+07:00", "content": "Fixed với Redis Redlock. PR-90 ready. Integration test pass với 10 concurrent requests, không còn duplicate record."}
+      ]
+    },
+    {
+      "key": "ALPHA-149",
+      "summary": "Viết test case module Payment",
+      "type": "Task",
+      "status": "In Progress",
+      "priority": "Medium",
+      "assignee": "hung.nguyen",
+      "reporter": "dung.le",
+      "sprint": "Sprint 6",
+      "story_points": 5,
+      "created": "2025-01-06T09:00:00+07:00",
+      "updated": "2025-01-07T17:00:00+07:00",
+      "description": "Viết comprehensive test cases cho Payment module. Bao gồm happy path, edge cases, refund scenarios.",
+      "progress_note": "58/60 test cases done. 2 test còn lại cần staging CIC stable mới test được.",
+      "labels": ["qa", "testing"]
+    },
+    {
+      "key": "ALPHA-150",
+      "summary": "Bug: Form validation không check negative amount",
+      "type": "Bug",
+      "status": "Open",
+      "priority": "Medium",
+      "assignee": "mai.do",
+      "reporter": "hung.nguyen",
+      "sprint": "Sprint 6",
+      "story_points": 2,
+      "created": "2025-01-07T13:00:00+07:00",
+      "updated": "2025-01-07T13:00:00+07:00",
+      "description": "Form tạo khoản vay cho phép nhập số âm vào field Amount. Backend reject nhưng frontend không validate trước.",
+      "labels": ["frontend", "bug", "validation"]
+    },
+    {
+      "key": "ALPHA-151",
+      "summary": "Bug: Trang loan list bị blank khi filter kết hợp status + date range",
+      "type": "Bug",
+      "status": "Open",
+      "priority": "Medium",
+      "assignee": "mai.do",
+      "reporter": "hung.nguyen",
+      "sprint": "Sprint 6",
+      "story_points": 3,
+      "created": "2025-01-07T13:00:00+07:00",
+      "updated": "2025-01-07T13:00:00+07:00",
+      "description": "Khi filter cùng lúc status='OVERDUE' và date range, trang hiển thị blank thay vì empty state message.",
+      "labels": ["frontend", "bug"]
+    },
+    {
+      "key": "ALPHA-152",
+      "summary": "Performance: Query báo cáo tổng hợp chạy 8 giây",
+      "type": "Bug",
+      "status": "Open",
+      "priority": "High",
+      "assignee": "anh.tran",
+      "reporter": "dung.le",
+      "sprint": "Sprint 6",
+      "story_points": 8,
+      "created": "2025-01-07T13:00:00+07:00",
+      "updated": "2025-01-07T13:00:00+07:00",
+      "description": "Query summary report trên bảng transactions (~5M records) chạy 7-9 giây. Target < 2 giây. Cần add index + optimize query, có thể cần materialized view.",
+      "labels": ["backend", "performance", "database"]
+    }
+  ],
+  "sprint_summary": {
+    "sprint": "Sprint 6",
+    "start_date": "2025-01-06",
+    "end_date": "2025-01-17",
+    "goal": "Hoàn thành Loan Management module + fix critical bugs từ Sprint 5",
+    "total_points": 44,
+    "completed_points": 13,
+    "in_progress_points": 21,
+    "todo_points": 10,
+    "velocity_last_sprint": 38
+  }
+}

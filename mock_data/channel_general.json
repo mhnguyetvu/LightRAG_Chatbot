@@ -1,0 +1,39 @@
+[
+  {
+    "channel": "general",
+    "date": "2025-01-06",
+    "messages": [
+      {"time": "09:02", "sender": "lan.nguyen", "role": "HR Manager", "content": "Chào buổi sáng mọi người! Nhắc nhở: hôm nay hạn chót đăng ký phép Tết (25/01 - 02/02). Ai chưa đăng ký trên HRM thì đăng ký trước 17:00 hôm nay nhé!"},
+      {"time": "09:05", "sender": "dung.le", "role": "PM - Alpha", "content": "Cảm ơn Lan! Team Alpha đã đăng ký hết rồi 👍"},
+      {"time": "09:07", "sender": "mai.do", "role": "Frontend Dev", "content": "Cho hỏi chị Lan, nếu đăng ký 5 ngày phép liên tục thì có cần PM approve trước không hay chỉ cần submit trên HRM?"},
+      {"time": "09:10", "sender": "lan.nguyen", "role": "HR Manager", "content": "@mai.do Phép từ 3 ngày trở lên cần PM approve trong HRM trước, sau đó HR confirm. PM của bạn là anh Dũng đúng không? Nhờ anh Dũng approve nhé!"},
+      {"time": "09:12", "sender": "dung.le", "role": "PM - Alpha", "content": "@mai.do Mai ơi submit đi, anh approve ngay!"},
+      {"time": "10:30", "sender": "duc.hoang", "role": "AI Lead - Beta", "content": "Team Beta: hôm nay mình sẽ demo LightRAG integration lúc 3pm tại phòng B. Ai rảnh qua xem, knowledge graph khá cool 🔥"},
+      {"time": "10:45", "sender": "phuong.nguyen", "role": "AI Engineer", "content": "👋 mình sẽ qua xem anh Đức! Đang tò mò về phần embedding tiếng Việt"},
+      {"time": "11:00", "sender": "quan.nguyen", "role": "Tech Lead - Alpha", "content": "Anh Đức cho mình xem với, đang nghiên cứu áp dụng cho Alpha phase 2"},
+      {"time": "14:55", "sender": "khai.ly", "role": "DevOps", "content": "Cảnh báo: RunPod pod sẽ restart lúc 15:00 để update driver. Mọi người save work trước nhé!"},
+      {"time": "15:00", "sender": "duc.hoang", "role": "AI Lead - Beta", "content": "Oke Khải, mình đang demo xong thì restart đúng lúc 😅"},
+      {"time": "16:30", "sender": "hoa.tran", "role": "HR Executive", "content": "Mọi người nhớ submit timesheet tuần này trước 17:30 hôm nay. Tuần này có thêm 1 ngày WFH bonus do hoàn thành sprint đúng hạn 🎉"},
+      {"time": "17:15", "sender": "linh.vu", "role": "PO - Beta", "content": "Team Beta họp retro sprint 3 lúc 9:00 sáng mai tại phòng A. Mọi người chuẩn bị điểm tốt/cần cải thiện nhé!"},
+      {"time": "17:20", "sender": "nam.bui", "role": "Backend Dev", "content": "👍"}
+    ]
+  },
+  {
+    "channel": "general",
+    "date": "2025-01-07",
+    "messages": [
+      {"time": "08:45", "sender": "quan.nguyen", "role": "Tech Lead - Alpha", "content": "Anh em Alpha: bug race condition #ALPHA-147 đã reproduce được. Root cause là thiếu distributed lock khi update loan status. Mình sẽ fix hôm nay, dùng Redis Redlock."},
+      {"time": "08:50", "sender": "anh.tran", "role": "Backend Dev", "content": "Anh Quân muốn mình support không? Mình đang xong API credit score rồi"},
+      {"time": "08:52", "sender": "quan.nguyen", "role": "Tech Lead - Alpha", "content": "@anh.tran cảm ơn em, anh handle được. Em tập trung vào optimize query báo cáo nhé, performance issue đó quan trọng hơn"},
+      {"time": "09:00", "sender": "duc.hoang", "role": "AI Lead - Beta", "content": "Update: LightRAG integration đang ở 60%. Vấn đề là indexing 10k sản phẩm tốn ~2 giờ với GPT-4o-mini. Mình đang test Qwen2.5:32B local để giảm chi phí."},
+      {"time": "09:15", "sender": "linh.vu", "role": "PO - Beta", "content": "Anh Đức, client hỏi bao giờ có thể demo KB trên môi trường staging?"},
+      {"time": "09:18", "sender": "duc.hoang", "role": "AI Lead - Beta", "content": "@linh.vu Nếu indexing xong hôm nay thì staging demo được thứ Tư 08/01. Mình sẽ update sau khi test xong."},
+      {"time": "11:30", "sender": "lan.nguyen", "role": "HR Manager", "content": "Nhắc nhở: Ai chưa nhận laptop mới (MacBook M3 Pro) đợt này, contact Hòa (hr@techviet.vn) để đặt lịch nhận. Còn 3 máy cho team Engineering."},
+      {"time": "13:00", "sender": "hung.nguyen", "role": "QA Engineer", "content": "Team Alpha: mình đã test xong 45/60 test cases cho module Loan. Tìm thêm được 3 bug nhỏ, đã tạo ticket #ALPHA-150, 151, 152. Review nhé anh Quân!"},
+      {"time": "13:10", "sender": "quan.nguyen", "role": "Tech Lead - Alpha", "content": "@hung.nguyen cảm ơn Hùng! Để anh check. Bug nào critical thì ping ngay nhé"},
+      {"time": "15:00", "sender": "thu.le", "role": "BA", "content": "Update wireframe màu sắc loan status đã xong, share lên Figma: [link-figma-alpha-ux-v2.3]. Anh Quân và Mai review giúp nhé, cần confirm trước cuộc họp với MoneySmart ngày mai."},
+      {"time": "15:30", "sender": "mai.do", "role": "Frontend Dev", "content": "@thu.le Mình review xong rồi, OK hết. Chỉ có 1 điểm nhỏ: màu 'Overdue' nên đậm hơn một chút để người dùng dễ nhận ra. Mình comment trên Figma rồi."},
+      {"time": "16:45", "sender": "dung.le", "role": "PM - Alpha", "content": "Team: nhắc nhở cuộc họp weekly với MoneySmart ngày mai thứ Tư 08/01 lúc 14:00 trên Google Meet. Thu chuẩn bị slide update tiến độ Sprint 6. Quân chuẩn bị demo bug fix #147."}
+    ]
+  }
+]

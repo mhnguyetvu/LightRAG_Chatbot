@@ -1,0 +1,26 @@
+[
+  {
+    "channel": "project-alpha",
+    "date": "2025-01-07",
+    "messages": [
+      {"time": "09:00", "sender": "dung.le", "role": "PM", "content": "Good morning team! Daily standup: \n1. Anh/chị đang làm gì?\n2. Có blocker không?\n3. Hôm nay plan làm gì?"},
+      {"time": "09:02", "sender": "huong.pham", "role": "Backend Dev", "content": "Hương: (1) Hôm qua xong ALPHA-141 API CRUD khách hàng, đã merge vào main (2) Không có blocker (3) Hôm nay support Anh với credit score API + review code"},
+      {"time": "09:04", "sender": "anh.tran", "role": "Backend Dev", "content": "Anh: (1) ALPHA-142 credit score API đang 70%, hôm qua xử lý được phần call CIC (2) CIC staging hay timeout, nhưng đã có mock fallback (3) Hôm nay finish API, viết unit test"},
+      {"time": "09:06", "sender": "mai.do", "role": "Frontend Dev", "content": "Mai: (1) ALPHA-145 UI loan management đang 50% (2) Chờ API từ Anh xong mới làm được phần bảng loan list (3) Hôm nay làm phần form create loan trước, không phụ thuộc API"},
+      {"time": "09:08", "sender": "hung.nguyen", "role": "QA", "content": "Hùng: (1) Test module Payment, đã có 45/60 test cases (2) Cần spec rõ hơn về edge case refund partial - chờ Thu clarify (3) Tiếp tục test, làm test case còn lại"},
+      {"time": "09:10", "sender": "quan.nguyen", "role": "Tech Lead", "content": "Quân: (1) Debug ALPHA-147 race condition, đã reproduce và hiểu root cause (2) Không blocker (3) Fix hôm nay dùng Redlock, estimate 4h"},
+      {"time": "09:12", "sender": "thu.le", "role": "BA", "content": "Thu: (1) Đang cập nhật wireframe theo feedback MoneySmart (2) Cần confirm 1 điểm với Dũng về loan approval workflow (3) Xong wireframe + chuẩn bị slide cho meeting ngày mai"},
+      {"time": "09:15", "sender": "dung.le", "role": "PM", "content": "OK team! Thu clarify edge case refund với Hùng trước 11h nhé. Quân estimate 4h fix race condition, expect done trước EOD. Good luck everyone 💪"},
+      {"time": "11:45", "sender": "anh.tran", "role": "Backend Dev", "content": "Update: ALPHA-142 API credit score done! PR đã tạo: [PR-89]. Hương review giúp anh nhé. Lưu ý: response time CIC mock ~300ms, thật ~800-2000ms tùy tải"},
+      {"time": "12:00", "sender": "huong.pham", "role": "Backend Dev", "content": "@anh.tran OK mình review sau ăn trưa. Mail Anh ơi, đặt timeout CIC là 5s hay 10s vậy? Thấy có comment trong code là 30s nhưng staging hay timeout"},
+      {"time": "12:05", "sender": "anh.tran", "role": "Backend Dev", "content": "@huong.pham Mình set 10s + retry 2 lần. Staging CIC hay lỗi do infra của họ, production ổn hơn. Đã mention trong PR description rồi"},
+      {"time": "14:30", "sender": "quan.nguyen", "role": "Tech Lead", "content": "🎉 ALPHA-147 race condition FIXED! PR-90 ready for review. Solution: dùng Redis Redlock với TTL 30s cho loan approval flow. Added integration test với concurrent 10 requests. Mọi người review nhé!"},
+      {"time": "14:35", "sender": "dung.le", "role": "PM", "content": "Excellent Quân! 🙌 Vậy là unblock được M3 milestone. Sẽ include vào demo ngày mai với MoneySmart."},
+      {"time": "15:00", "sender": "mai.do", "role": "Frontend Dev", "content": "Anh Quân ơi, form Create Loan cần field 'Loan Purpose' không? BA spec chưa mention nhưng mình thấy API có field đó"},
+      {"time": "15:05", "sender": "quan.nguyen", "role": "Tech Lead", "content": "@mai.do Hỏi Thu xem, đó là business decision. Về mặt technical thì API support rồi"},
+      {"time": "15:08", "sender": "thu.le", "role": "BA", "content": "@mai.do Có nhé! MoneySmart yêu cầu bắt buộc. Field là dropdown: Personal, Business, Education, Medical, Other. Mình sẽ update spec hôm nay"},
+      {"time": "17:00", "sender": "hung.nguyen", "role": "QA", "content": "EOD update: 58/60 test cases done. 2 cái còn lại cần staging CIC hoạt động ổn mới test được. Tổng: 3 bug medium (#150, 151, 152), 0 critical. Sprint 6 đang ổn!"},
+      {"time": "17:10", "sender": "dung.le", "role": "PM", "content": "Good work team! Tóm tắt ngày 07/01:\n✅ Credit score API done (Anh)\n✅ Race condition fix done (Quân)\n📊 Test coverage 58/60 (Hùng)\n🔄 UI loan form đang chạy (Mai)\nNgày mai: họp MoneySmart 14:00, chuẩn bị demo bug fix + tiến độ Sprint 6. Thu gửi slide trước 12:00 nhé!"}
+    ]
+  }
+]
